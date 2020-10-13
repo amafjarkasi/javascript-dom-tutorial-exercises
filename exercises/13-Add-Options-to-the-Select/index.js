@@ -5,15 +5,15 @@ window.onload = function() {
 	// your code here
 
 	for (const i of countries) {
-		let getSelection = document.getElementById("mySelect");
+		let getSelection = document.querySelector("#mySelect");
 		let populate = document.createElement("option");
-		let countryAdd = document.createTextNode(i);
-		populate.appendChild(countryAdd);
-		getSelection.appendChild(populate);
+		populate.textContent = i;
+		document.querySelector("#mySelect").appendChild(populate);
 	}
 };
 
-let button = document.getElementById("mySelect");
-button.addEventListener("change", function() {
-	//alert(button.options[button.selected]);
+let dropdown = document.getElementById("mySelect");
+dropdown.addEventListener("change", function() {
+	var result = dropdown.options[dropdown.selectedIndex].text;
+	alert(result);
 });
